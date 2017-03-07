@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'AntNest_Example' do
+  pod 'AntNest', :path => '../'
+
+  target 'AntNest_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
