@@ -7,13 +7,26 @@
 //
 
 #import "ANAppDelegate.h"
+#import "AntChannel.h"
+#import "ANAntDes.h"
+#import "AntProtocol.h"
+#import "AntNest.h"
 
 @implementation ANAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+  self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+  self.window .backgroundColor = [UIColor whiteColor];
+  UIViewController<AntProtocol> *root = [AntChannel antWith:[[ANAntDes alloc] initWith:@"HomeAnt"]];
+  self.window.rootViewController = root;
+  
+  [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
+  
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -41,6 +54,10 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
+  [[AntNest sharedAntNest] application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
 }
 
 @end

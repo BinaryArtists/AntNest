@@ -1,0 +1,16 @@
+PODS:
+  - AntNest (0.1.0)
+
+DEPENDENCIES:
+  - AntNest (from `../`)
+
+EXTERNAL SOURCES:
+  AntNest:
+    :path: ../
+
+SPEC CHECKSUMS:
+  AntNest: 26aa7c34ed99bbfd5062892b71793b06fa304ea9
+
+PODFILE CHECKSUM: 6da5c23b050150f578bde6cbb30cb1df1dfb5710
+
+COCOAPODS: 1.0.1

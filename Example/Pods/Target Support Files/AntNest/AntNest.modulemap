@@ -1,0 +1,6 @@
+framework module AntNest {
+  umbrella header "AntNest-umbrella.h"
+
+  export *
+  module * { export * }
+}
