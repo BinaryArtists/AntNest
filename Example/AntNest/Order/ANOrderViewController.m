@@ -55,7 +55,7 @@ ANT_EXPORT_ANT()
   [super viewDidLoad];
   
   self.tabBarItem.title = @"订单";
-  id<ANOrderAccounInfo> orderAccounInfo = [AntChannel antWith:[[ANAntDes alloc] initWith:@"AccountInfoAnt"]];
+  id<ANOrderAccounInfo> orderAccounInfo = ANT_CHANNEL(ANOrderAccounInfo, [[ANAntDes alloc] initWith:@"AccountInfoAnt"]);
   NSLog(@"orderAccounInfo name %@ age %@",orderAccounInfo.userName,@(orderAccounInfo.age));
   
   UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
