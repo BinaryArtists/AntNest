@@ -60,7 +60,7 @@
   
   id<AntProtocol> ant = nil;
   
-  if ([antClass respondsToSelector:@selector(singleton)] && [antClass singleton]) {
+  if ([(id)antClass respondsToSelector:@selector(singleton)] && [antClass singleton]) {
     ant = [[AntQueen sharedAntQueen].singletonAntTypeMap objectForKey:[antDescription antType]];
     if (!ant) {
       ant = [antClass createInstance:antDescription];
@@ -121,10 +121,10 @@
         }
         
         [anInvocation getArgument:argBuf atIndex:i];
-        
+        innerInv.selector = anInvocation.selector;
         [innerInv setArgument:argBuf atIndex:i - 1];
       }
-      [anInvocation invokeWithTarget:antRoomInstance];
+      [innerInv invokeWithTarget:antRoomInstance];
       free(argBuf);
     }
   }

@@ -55,6 +55,7 @@
 + (BOOL)applicationDidFinishLaunchingWithOptions:(NSNotification *)notification {
   [AntQueen loadAllAntRooms:notification.userInfo];
   [[AntNest sharedAntNest] application:notification.object didFinishLaunchingWithOptions:notification.userInfo];
+  return YES;
 }
 
 + (void)applicationDidBecomeActive:(NSNotification *)notification {

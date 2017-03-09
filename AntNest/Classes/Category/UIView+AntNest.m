@@ -16,7 +16,7 @@
   
   while (nextResponder) {
     if ([nextResponder isKindOfClass:[UINavigationController class]]) {
-      return nextResponder;
+      return (UINavigationController *)nextResponder;
     }
     nextResponder = nextResponder.nextResponder;
   }
