@@ -148,7 +148,7 @@ antRoomLevel 表示模块的初始化优先级
 
   - (void)payOrder;
 ```
-自定义一个 Protocol
+自定义一个 Protocol 获取服务实例
 ```objc
   @protocol ANOrderDetailProtocol<AntProtocol>
 
@@ -166,19 +166,6 @@ antRoomLevel 表示模块的初始化优先级
 
 id<ANOrderDetailProtocol> orderDetail = ANT_CHANNEL(ANOrderDetailProtocol, [[ANAntDes alloc] initWith:@"ANOrderDetailAnt"])
 ```
-
-获取实例
-
-``` objc
-  ANDetailOrder *detailOrderDes = [ANDetailOrder new];
-  detailOrderDes.antType = @"OrderDetailAnt";
-  detailOrderDes.orderID = @"fdfdsfdsfds";
-  detailOrderDes.customerName = @"carl shen";
-  detailOrderDes.shopName = @"天朝";
-  UIViewController *order = [AntChannel antWith:detailOrderDes];
-```
-
-ANDetailOrder 必须实现 AntDescriptionProtocol 而且带上获取服务所需的参数
 
 #### ant service 注册
 
