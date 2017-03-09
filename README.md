@@ -7,7 +7,7 @@
 
 ## 简介
 
-AntNest是吸收了Go语言的Interface模型的iOS的App模块化解耦编程的框架。
+AntNest 是吸收了 Go 语言的 Interface 模型的 iOS 的 App 模块化解耦编程的框架。
 
 * 完全解耦的面向接口插件化模块开发运行框架
 * 模块具体实现与接口调用分离
@@ -15,13 +15,13 @@ AntNest是吸收了Go语言的Interface模型的iOS的App模块化解耦编程�
 
 #### 设计原则
 
-* Go语言的Interface模型
+* Go 语言的 Interface 模型
 * 蚁巢的蚁室蚁道模型
 
 #### 基本架构
 
 * antRoom 为单独的模块
-* antChannel  为antRoom之间的通信通道
+* antChannel 为 antRoom 之间的通信通道
 
 ![](http://upload-images.jianshu.io/upload_images/3146026-dc158abc907374f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -46,7 +46,7 @@ AntNest是吸收了Go语言的Interface模型的iOS的App模块化解耦编程�
 * applicationSignificantTimeChange
 
 
-在子模块中实现对应的方法， AntNest就会自动的分发到对应的模块。
+在子模块中实现对应的方法，AntNest 就会自动的分发到对应的模块。
 
 ``` objc
 @implementation ANOrderAntRoom
@@ -70,7 +70,8 @@ ANT_EXPORT_ANTROOM()
 ```
 
 #### 扩展事件分发系统
-AntNest 扩展事件分发 是很方便的 ，举个简单的列子 分发推送事件(AntNest 已经这个事件接口)，
+
+AntNest 扩展事件分发是很方便的，举个简单的列子分发推送事件（AntNest 已经这个事件接口）
 
 * 定义事件接口
 
@@ -82,7 +83,7 @@ AntNest 扩展事件分发 是很方便的 ，举个简单的列子 分发推送
 @end
 ```
 
-* 定义AntNest 扩展实现接口，不用去实现具体的方法
+* 定义 AntNest 扩展实现接口，不用去实现具体的方法
 
 ``` objc
 @interface AntNest (ANRemotePushEvent)<ANRemotePushEvent>
@@ -113,7 +114,7 @@ ANT_EXPORT_ANTROOM()
 
 #### 模块创建
 
-实现AntRoomProtocol 协议
+实现 AntRoomProtocol 协议
 
 antRoomLevel 表示模块的初始化优先级
 
@@ -132,7 +133,7 @@ antRoomLevel 表示模块的初始化优先级
 
 ## 模块通讯
 
-模块间的通讯是通过AntChannel 进行通讯，里面传递的都是实现AntProtocol协议对象
+模块间的通讯是通过 AntChannel 进行通讯，里面传递的都是实现 AntProtocol 协议对象
 
 ``` objc
   @interface AntChannel : NSObject
@@ -153,10 +154,11 @@ antRoomLevel 表示模块的初始化优先级
   UIViewController *order = [AntChannel antWith:detailOrderDes];
 ```
 
-ANDetailOrder  必须实现AntDescriptionProtocol 而且带上获取服务所需的参数
+ANDetailOrder 必须实现 AntDescriptionProtocol 而且带上获取服务所需的参数
 
 #### ant service 注册
-AntChannel 中传递的都是ant service
+
+AntChannel 中传递的都是 ant service
 ``` objc
 ANT_EXPORT_ANT()
 
@@ -173,18 +175,13 @@ ANT_EXPORT_ANT()
 }
 ``` 
 
-
-
-
-
-
-
 ## Requirements
+
+* XCode
 
 ## Installation
 
-AntNest is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+AntNest is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
 pod "AntNest"
@@ -192,7 +189,7 @@ pod "AntNest"
 
 ## Author
 
-qiang..shen@ele.me
+qiang.shen@ele.me
 
 ## License
 
