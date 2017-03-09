@@ -18,6 +18,8 @@ AntNest 是吸收了 Go 语言的 Interface 模型的 iOS 的 App 模块化解�
 * Go 语言的 Interface 模型
 * 蚁巢的蚁室蚁道模型
 
+![](http://upload-images.jianshu.io/upload_images/3146026-4743ae1d628111ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 #### 基本架构
 
 * antRoom 为单独的模块
