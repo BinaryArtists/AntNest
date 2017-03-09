@@ -7,7 +7,7 @@
 //
 
 #import "AntChannel.h"
-#import "AntQueen.h"
+#import "AntQueen+Private.h"
 
 @implementation AntChannel
 

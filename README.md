@@ -135,14 +135,36 @@ antRoomLevel 表示模块的初始化优先级
 
 ## 模块通讯
 
-模块间的通讯是通过 AntChannel 进行通讯，里面传递的都是实现 AntProtocol 协议对象
+模块间的通讯是通过 AntChannel 进行通讯，里面传递的都是实现 AntProtocol 协议对象。
+
+假如我们要获取一个服务支持如下功能
 
 ``` objc
-  @interface AntChannel : NSObject
+  @property(nonatomic, strong) NSString *orderID;
 
-  +(id)antWith:(id<AntDescriptionProtocol>)antDescription;
+  @property(nonatomic, strong) NSString *customerName;
 
-  @end
+  @property(nonatomic, strong) NSString *shopName;
+
+  - (void)payOrder;
+```
+自定义一个 Protocol
+```objc
+  @protocol ANOrderDetailProtocol<AntProtocol>
+
+  @property(nonatomic, strong) NSString *orderID;
+
+  @property(nonatomic, strong) NSString *customerName;
+
+  @property(nonatomic, strong) NSString *shopName;
+
+  - (void)payOrder;
+
+@end
+
+...
+
+id<ANOrderDetailProtocol> orderDetail = ANT_CHANNEL(ANOrderDetailProtocol, [[ANAntDes alloc] initWith:@"ANOrderDetailAnt"])
 ```
 
 获取实例
@@ -160,7 +182,7 @@ ANDetailOrder 必须实现 AntDescriptionProtocol 而且带上获取服务所需
 
 #### ant service 注册
 
-AntChannel 中传递的都是 ant service
+AntChannel 中传递的都是 ant service,
 ``` objc
 ANT_EXPORT_ANT()
 

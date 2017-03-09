@@ -25,8 +25,6 @@
 
 + (void)registerAntClass:(Class<AntProtocol>)antClass;
 
-+ (id<AntProtocol>)createAnt:(id<AntDescriptionProtocol>)antDescription;
-
 + (void)registerAntRoom:(Class<AntRoomProtocol>)antRoom;
 
 @end

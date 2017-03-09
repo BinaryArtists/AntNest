@@ -12,6 +12,8 @@
 
 + (void)loadAllAntRooms:(NSDictionary *)launchOptions;
 
++ (id<AntProtocol>)createAnt:(id<AntDescriptionProtocol>)antDescription;
+
 + (void)antRoomsInvocation:(NSInvocation *)anInvocation;
 
 @end
