@@ -122,7 +122,7 @@
         
         [anInvocation getArgument:argBuf atIndex:i];
         innerInv.selector = anInvocation.selector;
-        [innerInv setArgument:argBuf atIndex:i - 1];
+        [innerInv setArgument:argBuf atIndex:i];
       }
       [innerInv invokeWithTarget:antRoomInstance];
       free(argBuf);
