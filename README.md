@@ -1,6 +1,6 @@
 # AntNest
 
-[![CI Status](http://img.shields.io/travis/carlSQ/AntNest.svg?style=flat)](https://travis-ci.org/yuzhoulangzik@126.com/AntNest)
+[![CI Status](http://img.shields.io/travis/carlSQ/AntNest.svg?style=flat)](https://travis-ci.org/carlSQ/AntNest)
 [![Version](https://img.shields.io/cocoapods/v/AntNest.svg?style=flat)](http://cocoapods.org/pods/AntNest)
 [![License](https://img.shields.io/cocoapods/l/AntNest.svg?style=flat)](http://cocoapods.org/pods/AntNest)
 [![Platform](https://img.shields.io/cocoapods/p/AntNest.svg?style=flat)](http://cocoapods.org/pods/AntNest)
