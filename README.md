@@ -92,12 +92,14 @@ AntNest 扩展事件分发是很方便的，举个简单的列子分发推送事
 
 @end
 
-
-@implementation AntNest (ANRemotePushEvent)
-
-@end
-
 ```
+
+* 注册事件接口
+
+``` objc
+[[AntNest sharedAntNest] registerProtocolEvent:@protocol(ANRemotePushEvent)];
+```
+
 * 触发事件
 
 ``` objc

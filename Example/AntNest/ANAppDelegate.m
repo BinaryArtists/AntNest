@@ -11,22 +11,24 @@
 #import "ANAntDes.h"
 #import "AntProtocol.h"
 #import "AntNest.h"
+#import "AntNest+ANTestEvent.h"
 
 @implementation ANAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [[AntNest sharedAntNest] registerProtocolEvent:@protocol(ANTestEvent)];
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   self.window .backgroundColor = [UIColor whiteColor];
   UIViewController<AntProtocol> *root = [AntChannel antWith:[[ANAntDes alloc] initWith:@"HomeAnt"]];
   self.window.rootViewController = root;
-  
+
   [self.window makeKeyAndVisible];
     return YES;
 }
 
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
-  
+    [[AntNest sharedAntNest] testEvent:application launchOptions:nil];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

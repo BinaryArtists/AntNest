@@ -48,6 +48,7 @@
 		0045CD1661920A45EB001E82 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		06D26CD6075C8F40EE5E5CB5 /* AntNest.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AntNest.podspec; path = ../AntNest.podspec; sourceTree = "<group>"; };
 		17A439F35CA36F98705CCD53 /* Pods_AntNest_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AntNest_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B8BFEF81E82C96900A53E89 /* AntNest+ANTestEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AntNest+ANTestEvent.h"; sourceTree = "<group>"; };
 		1BC9C8D61E700C0200C07F21 /* ANHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANHomeViewController.h; sourceTree = "<group>"; };
 		1BC9C8D71E700C0200C07F21 /* ANHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANHomeViewController.m; sourceTree = "<group>"; };
 		1BC9C8D91E70110F00C07F21 /* ANOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANOrderViewController.h; sourceTree = "<group>"; };
@@ -220,6 +221,7 @@
 				1BC9C8D51E700BCC00C07F21 /* User */,
 				6003F59C195388D20070C39A /* ANAppDelegate.h */,
 				6003F59D195388D20070C39A /* ANAppDelegate.m */,
+				1B8BFEF81E82C96900A53E89 /* AntNest+ANTestEvent.h */,
 				1BC9C8DF1E7013CA00C07F21 /* ANAntDes.h */,
 				1BC9C8E01E7013CA00C07F21 /* ANAntDes.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,

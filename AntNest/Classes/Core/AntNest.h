@@ -17,4 +17,6 @@
 
 + (instancetype)sharedAntNest;
 
+- (void)registerProtocolEvent:(Protocol *)protocol;
+
 @end

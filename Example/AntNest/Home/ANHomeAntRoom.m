@@ -25,5 +25,9 @@ ANT_EXPORT_ANTROOM()
   return YES;
 }
 
+- (void)testEvent:(UIApplication *)application launchOptions:(NSDictionary *)launchOptions {
+  NSLog(@"ANHomeAntRoom room test event");
+}
+
 
 @end
