@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AntNest'
-  s.version          = '0.3.0'
+  s.version          = '0.4.0'
   s.summary          = 'AntNest是吸收了Go语言的Interface模型的iOS的App模块化解耦编程的框架'
 
 # This description is used to generate tags and improve search results.
