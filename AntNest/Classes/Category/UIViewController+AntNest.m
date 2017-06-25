@@ -16,6 +16,42 @@ typedef NS_ENUM(NSUInteger, ANStyle) {
 
 @implementation UIViewController (AntNest)
 
+
++ (void)load {
+  
+  static dispatch_once_t onceToken;
+  
+  dispatch_once(&onceToken, ^{
+    
+    [self method_exchangeImplementations:@selector(presentViewController:
+                                                   animated:
+                                                   completion:)
+                                  newSel:@selector(an_presentViewController:
+                                                   animated:
+                                                   completion:)];
+  });
+  
+}
+
++ (void)method_exchangeImplementations:(SEL)sel newSel:(SEL)newSel {
+  
+  Method originalMethod = class_getInstanceMethod([self class], sel);
+  
+  Method swizzledMethod = class_getInstanceMethod([self class], newSel);
+  
+  method_exchangeImplementations(originalMethod,swizzledMethod);
+  
+}
+
+- (void)an_presentViewController:(UIViewController *)viewControllerToPresented
+                        animated: (BOOL)flag
+                      completion:(void (^ __nullable)(void))completion {
+  [viewControllerToPresented setAn_style:ANStyleModal];
+  [self an_presentViewController:viewControllerToPresented animated:flag completion:completion];
+  
+}
+
+
 - (void)setAn_style:(ANStyle)anStyle {
   objc_setAssociatedObject(self, _cmd, @(anStyle), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
@@ -54,12 +90,6 @@ typedef NS_ENUM(NSUInteger, ANStyle) {
     [self method_exchangeImplementations:@selector(pushViewController:animated:)
                                   newSel:@selector(an_pushViewController:animated:)];
     
-    [self method_exchangeImplementations:@selector(presentViewController:
-                                                   animated:
-                                                   completion:)
-                                  newSel:@selector(an_presentViewController:
-                                                   animated:
-                                                   completion:)];
   });
   
 }
@@ -81,12 +111,6 @@ typedef NS_ENUM(NSUInteger, ANStyle) {
   
 }
 
-- (void)an_presentViewController:(UIViewController *)viewControllerToPresented
-                        animated: (BOOL)flag
-                      completion:(void (^ __nullable)(void))completion {
-  [viewControllerToPresented setAn_style:ANStyleModal];
-  [self an_presentViewController:viewControllerToPresented animated:flag completion:completion];
-  
-}
+
 
 @end
